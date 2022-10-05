@@ -74,15 +74,16 @@
       <v-container fluid class="p-0">
         <v-row class="mb-2" no-gutters>
           <v-col>
-            <v-text-field 
-              outlined 
-              hide-details 
-              dense
-              placeholder="Hiveon Email"
-              :rules="[rules.required, rules.email]"
-              label="E-mail"
-              v-model="email"
-            />
+            <v-form ref="form" v-model="form">
+              <v-text-field 
+                outlined
+                dense
+                placeholder="Grid Email"
+                :rules="[rules.required, rules.email]"
+                label="E-mail"
+                v-model="email"
+              />
+            </v-form>
           </v-col>
         </v-row>
       </v-container>
@@ -124,6 +125,7 @@ export default {
       username: "",
       password: "",
       email: "",
+      form: false,
       forgotScreen: false,
       rules: {
         required: value => !!value || 'Required.',
@@ -144,7 +146,8 @@ export default {
       }
     },
     resetPass() {
-      this.$emit("reset", true)
+      this.$refs.form.validate()
+      if (this.form) this.$emit("reset", true)
     },
   },
   created() {
