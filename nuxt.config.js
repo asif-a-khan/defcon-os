@@ -6,7 +6,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - defcon-os',
+    titleTemplate: '',
     title: 'defcon-os',
     htmlAttrs: {
       lang: 'en'
@@ -14,7 +14,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'Linux based mining rig analytics for free. Visit github for source' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
